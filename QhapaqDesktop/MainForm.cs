@@ -16,7 +16,17 @@ namespace QhapaqDesktop {
       InitializeComponent();
     }
 
+    private void DebugControls() {
+      menuGrid.Rows.Add("鮭", "1匹", "80円", "");
+      menuGrid.Rows.Add("レモン", "2枚", "6円", "1切れは絞って、1切れは乗せる");
+      menuGrid.Rows.Add("ネギ", "10g", "5円", "最後に乗せる");
+    }
+
     private void MailForm_Load(object sender, EventArgs e) {
+      DebugControls();
+    }
+
+    private void metroButton1_Click(object sender, EventArgs e) {
 
     }
   }
