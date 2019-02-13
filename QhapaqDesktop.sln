@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QhapaqDesktop", "QhapaqDesktop\QhapaqDesktop.csproj", "{ABD5BD2B-D03C-4D82-A435-2E8A61AF905D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QhapaqLibrary", "QhapaqLibrary\QhapaqLibrary.csproj", "{8A036F83-ED46-4302-8979-F8DE44342020}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ABD5BD2B-D03C-4D82-A435-2E8A61AF905D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABD5BD2B-D03C-4D82-A435-2E8A61AF905D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABD5BD2B-D03C-4D82-A435-2E8A61AF905D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A036F83-ED46-4302-8979-F8DE44342020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A036F83-ED46-4302-8979-F8DE44342020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A036F83-ED46-4302-8979-F8DE44342020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A036F83-ED46-4302-8979-F8DE44342020}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
