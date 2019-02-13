@@ -27,11 +27,13 @@
       // 
       // LoginForm
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.ClientSize = new System.Drawing.Size(480, 300);
+      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.Name = "LoginForm";
-      this.Text = "LoginForm";
+      this.Padding = new System.Windows.Forms.Padding(12, 40, 12, 13);
+      this.Text = "ログイン";
       this.Load += new System.EventHandler(this.LoginForm_Load);
       this.ResumeLayout(false);
 

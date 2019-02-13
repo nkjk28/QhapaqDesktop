@@ -23,20 +23,10 @@
     /// コード エディターで変更しないでください。
     /// </summary>
     private void InitializeComponent() {
-      System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-      System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-      System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-      System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
-      System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
-      System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-      this.menuList = new MetroFramework.Controls.MetroListView();
-      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.loginButton = new MetroFramework.Controls.MetroButton();
       this.usernameLabel = new MetroFramework.Controls.MetroLabel();
       this.menuGrid = new MetroFramework.Controls.MetroGrid();
@@ -44,6 +34,7 @@
       this.columnIngredientsQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.columnIngredientsCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.columnIngredientsDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.menuTree = new System.Windows.Forms.TreeView();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
@@ -62,7 +53,7 @@
       // 
       // splitContainer1.Panel1
       // 
-      this.splitContainer1.Panel1.Controls.Add(this.menuList);
+      this.splitContainer1.Panel1.Controls.Add(this.menuTree);
       // 
       // splitContainer1.Panel2
       // 
@@ -71,36 +62,6 @@
       this.splitContainer1.SplitterDistance = 274;
       this.splitContainer1.SplitterWidth = 2;
       this.splitContainer1.TabIndex = 3;
-      // 
-      // menuList
-      // 
-      this.menuList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-      this.menuList.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.menuList.Font = new System.Drawing.Font("Segoe UI", 12F);
-      this.menuList.FullRowSelect = true;
-      listViewGroup1.Header = "ListViewGroup";
-      listViewGroup1.Name = "listViewGroup1";
-      listViewGroup2.Header = "ListViewGroup";
-      listViewGroup2.Name = "listViewGroup2";
-      this.menuList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
-      this.menuList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
-      this.menuList.Location = new System.Drawing.Point(0, 0);
-      this.menuList.Name = "menuList";
-      this.menuList.OwnerDraw = true;
-      this.menuList.Size = new System.Drawing.Size(274, 321);
-      this.menuList.TabIndex = 0;
-      this.menuList.UseCompatibleStateImageBehavior = false;
-      this.menuList.UseSelectable = true;
-      this.menuList.View = System.Windows.Forms.View.List;
       // 
       // loginButton
       // 
@@ -111,7 +72,7 @@
       this.loginButton.TabIndex = 5;
       this.loginButton.Text = "ログイン";
       this.loginButton.UseSelectable = true;
-      this.loginButton.Click += new System.EventHandler(this.metroButton1_Click);
+      this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
       // 
       // usernameLabel
       // 
@@ -137,28 +98,28 @@
       this.menuGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.menuGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
       this.menuGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.menuGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.menuGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
       this.menuGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.menuGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnIngredientsName,
             this.columnIngredientsQuantity,
             this.columnIngredientsCost,
             this.columnIngredientsDescription});
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-      this.menuGrid.DefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+      dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+      dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+      dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.menuGrid.DefaultCellStyle = dataGridViewCellStyle20;
       this.menuGrid.EnableHeadersVisualStyles = false;
       this.menuGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
       this.menuGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -166,14 +127,14 @@
       this.menuGrid.Name = "menuGrid";
       this.menuGrid.ReadOnly = true;
       this.menuGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-      dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-      dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.menuGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+      dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+      dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+      dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+      dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+      dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.menuGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
       this.menuGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
       this.menuGrid.RowTemplate.Height = 21;
       this.menuGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -209,6 +170,15 @@
       this.columnIngredientsDescription.ToolTipText = "調理方法や調理における注意など";
       this.columnIngredientsDescription.Width = 200;
       // 
+      // menuTree
+      // 
+      this.menuTree.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.menuTree.Location = new System.Drawing.Point(0, 0);
+      this.menuTree.Name = "menuTree";
+      this.menuTree.Size = new System.Drawing.Size(274, 321);
+      this.menuTree.TabIndex = 1;
+      this.menuTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.menuTree_AfterSelect);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -235,10 +205,6 @@
     #endregion
 
     private System.Windows.Forms.SplitContainer splitContainer1;
-    private MetroFramework.Controls.MetroListView menuList;
-    private System.Windows.Forms.ColumnHeader columnHeader1;
-    private System.Windows.Forms.ColumnHeader columnHeader2;
-    private System.Windows.Forms.ColumnHeader columnHeader3;
     private MetroFramework.Controls.MetroButton loginButton;
     private MetroFramework.Controls.MetroLabel usernameLabel;
     private MetroFramework.Controls.MetroGrid menuGrid;
@@ -246,6 +212,7 @@
     private System.Windows.Forms.DataGridViewTextBoxColumn columnIngredientsQuantity;
     private System.Windows.Forms.DataGridViewTextBoxColumn columnIngredientsCost;
     private System.Windows.Forms.DataGridViewTextBoxColumn columnIngredientsDescription;
+    private System.Windows.Forms.TreeView menuTree;
   }
 }
 

@@ -20,13 +20,25 @@ namespace QhapaqDesktop {
       menuGrid.Rows.Add("鮭", "1匹", "80円", "");
       menuGrid.Rows.Add("レモン", "2枚", "6円", "1切れは絞って、1切れは乗せる");
       menuGrid.Rows.Add("ネギ", "10g", "5円", "最後に乗せる");
+
+      menuTree.Nodes.Add("主食");
+      menuTree.Nodes[0].Nodes.Add("鯖の味噌煮");
+      menuTree.Nodes[0].Nodes.Add("回鍋肉");
+      menuTree.Nodes.Add("副菜");
+      menuTree.Nodes[1].Nodes.Add("ほうれん草のおひたし");
+      menuTree.Nodes[1].Nodes.Add("ほうれん草のごま和え");
+      menuTree.ExpandAll();
     }
 
     private void MailForm_Load(object sender, EventArgs e) {
       DebugControls();
     }
 
-    private void metroButton1_Click(object sender, EventArgs e) {
+    private void loginButton_Click(object sender, EventArgs e) {
+
+    }
+
+    private void menuTree_AfterSelect(object sender, TreeViewEventArgs e) {
 
     }
   }

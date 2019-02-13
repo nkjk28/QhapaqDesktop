@@ -27,11 +27,13 @@
       // 
       // MenuDetailForm
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.ClientSize = new System.Drawing.Size(480, 300);
+      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.Name = "MenuDetailForm";
-      this.Text = "MenuDetailForm";
+      this.Padding = new System.Windows.Forms.Padding(12, 40, 12, 13);
+      this.Text = "メニュー追加/更新";
       this.Load += new System.EventHandler(this.MenuDetailForm_Load);
       this.ResumeLayout(false);
 
