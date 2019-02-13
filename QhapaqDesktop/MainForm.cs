@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using QhapaqLibrary;
 
 namespace QhapaqDesktop {
   public partial class MainForm : MetroForm {
@@ -16,22 +17,25 @@ namespace QhapaqDesktop {
       InitializeComponent();
     }
 
-    private void DebugControls() {
-      menuGrid.Rows.Add("鮭", "1匹", "80円", "");
-      menuGrid.Rows.Add("レモン", "2枚", "6円", "1切れは絞って、1切れは乗せる");
-      menuGrid.Rows.Add("ネギ", "10g", "5円", "最後に乗せる");
+    // key is menu name, value is menu detail
+    Dictionary<string, QhapaqLibrary.Menu> Menus;
 
-      menuTree.Nodes.Add("主食");
-      menuTree.Nodes[0].Nodes.Add("鯖の味噌煮");
-      menuTree.Nodes[0].Nodes.Add("回鍋肉");
-      menuTree.Nodes.Add("副菜");
-      menuTree.Nodes[1].Nodes.Add("ほうれん草のおひたし");
-      menuTree.Nodes[1].Nodes.Add("ほうれん草のごま和え");
+    private async void AddMenusToNodes() {
+      Menus = new Dictionary<string, QhapaqLibrary.Menu>();
+      var genres = await Qhapaq.GetGenres();
+      for (int i = 0; i < genres.Length; i++) { 
+        menuTree.Nodes.Add(genres[i].Name);
+        foreach (var menu in await Qhapaq.GetMenus(genres[i].Id)) {
+          if (menu == null) break;
+          menuTree.Nodes[i].Nodes.Add(menu.Name);
+          Menus.Add(menu.Name, menu);
+        }
+      }
       menuTree.ExpandAll();
     }
 
     private void MailForm_Load(object sender, EventArgs e) {
-      DebugControls();
+      AddMenusToNodes();
     }
 
     private void loginButton_Click(object sender, EventArgs e) {
@@ -39,7 +43,14 @@ namespace QhapaqDesktop {
     }
 
     private void menuTree_AfterSelect(object sender, TreeViewEventArgs e) {
+      if (Menus.ContainsKey(menuTree.SelectedNode.Name)) {
+        menuGrid.Rows.Clear();
 
+        var ingredients = Menus[menuTree.SelectedNode.Name].Ingredients;
+        foreach (var ingredient in ingredients) {
+          menuGrid.Rows.Add(ingredient.Name, ingredient.Quantity + ingredient.Unit, ingredient.Cost, ingredient.Description);
+        }
+      }
     }
   }
 }

@@ -102,5 +102,11 @@
       <Version>1.4.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QhapaqLibrary\QhapaqLibrary.csproj">
+      <Project>{8a036f83-ed46-4302-8979-f8de44342020}</Project>
+      <Name>QhapaqLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
