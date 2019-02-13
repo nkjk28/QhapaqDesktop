@@ -7,11 +7,11 @@ using Newtonsoft.Json;
 namespace QhapaqLibrary {
   public class Qhapaq {
     public async static Task<GenreSimple[]> GetGenres() {
-      return JsonConvert.DeserializeObject<Genres>(await GetAsync("http://localhost:4567/genres")).GenreList;
+      return JsonConvert.DeserializeObject<GenreSimple[]>(await GetAsync("http://localhost:4567/genres"));
     }
 
     public async static Task<Menu[]> GetMenus(int genreId) {
-      MenuSimple[] menuSimple = JsonConvert.DeserializeObject<Genre>(await GetAsync("http://localhost:4567/genre/" + genreId.ToString())).Menus;
+      MenuSimple[] menuSimple = JsonConvert.DeserializeObject<MenuSimple[]>(await GetAsync("http://localhost:4567/genre/" + genreId.ToString()));
       Menu[] menus = new Menu[menuSimple.Length];
       for (int i = 0; i < menuSimple.Length; i++) {
         menus[i] = await GetMenu(menuSimple[i].Id);
