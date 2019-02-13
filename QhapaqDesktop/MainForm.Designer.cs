@@ -1,5 +1,5 @@
 ﻿namespace QhapaqDesktop {
-  partial class Form1 {
+  partial class MainForm {
     /// <summary>
     /// 必要なデザイナー変数です。
     /// </summary>
@@ -32,7 +32,7 @@
       this.ClientSize = new System.Drawing.Size(800, 450);
       this.Name = "Form1";
       this.Text = "Form1";
-      this.Load += new System.EventHandler(this.Form1_Load);
+      this.Load += new System.EventHandler(this.MailForm_Load);
       this.ResumeLayout(false);
 
     }

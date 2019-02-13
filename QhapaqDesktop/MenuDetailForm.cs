@@ -11,12 +11,12 @@ using MetroFramework;
 using MetroFramework.Forms;
 
 namespace QhapaqDesktop {
-  public partial class Form1 : MetroForm {
-    public Form1() {
+  public partial class MenuDetailForm : MetroForm {
+    public MenuDetailForm() {
       InitializeComponent();
     }
 
-    private void Form1_Load(object sender, EventArgs e) {
+    private void MenuDetailForm_Load(object sender, EventArgs e) {
 
     }
   }
